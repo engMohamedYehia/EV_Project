@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block content %}
+<section class="group" id="home">
+  <div class="group-text">
+    <h1>Info about Report <span>{{report_is.title}}</span></h1>
+  </div>
+
+  <div class="group-card-view">
+    <div id="group-card-view_items">
+      <h3>
+        Group Name: <span style="color: rgb(49, 3, 60)">{{report_is.title}}</span>
+      </h3>
+      <h3>
+        Created Date:
+        <span style="color: rgb(49, 3, 60)">{{report_is.create}}</span>
+      </h3>
+      <h3>
+        Updated Date:
+        <span style="color: rgb(49, 3, 60)">{{report_is.update}}</span>
+      </h3>
+      <h3>
+        Created By:
+        <span style="color: rgb(49, 3, 60)">{{report_is.user}}</span>
+      </h3>
+      <h3>
+        In Group:
+        <span style="color: rgb(49, 3, 60)">{{report_is.group.name}}</span>
+      </h3>
+      <h3>
+        
+        <a href="{{ report_is.upload_file.url }}"><img src="https://img.icons8.com/stickers/100/000000/project-setup.png"/></a>
+        {% comment %} <a href="{{ report_is.upload_file.url }}"><embed src="{{ report_is.upload_file.url }}" width="70px" height="70px" /></a> {% endcomment %}
+      </h3>
+    </div>
+    <div id="group-card-view_button">
+      <a class="btn" href="{% url 'report_page' %}">Back</a>
+      <a class="btn" href="{% url 'update_report_page' report_is.id %}">Update</a>
+    </div>
+  </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="group" id="home">
+    <div class = "group-text"> 
+        <h1>Create a Report</h1>
+    </div>
+    <div class="group-card-report">
+        <form  method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class = 'btn_create' type="submit">Create</button>
+        </form>
+    </div>
+  </section>
+{% endblock content %}

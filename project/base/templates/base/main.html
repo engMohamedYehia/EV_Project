@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}<title>{{title}}</title>{% endblock title %}
+
+{% block content %}
+
+<section class="home" id="home">
+    <div class="home-card">
+      <h1>Number of Reports</h1>
+      <h2>{{number_of_reports}}</h2>
+    </div>
+    <div class="home-card">
+      <h1>Number of Users</h1>
+      <h2>{{number_of_users}}</h2>
+    </div>
+    <div class="home-card">
+      <h1>Number of Groups</h1>
+      <h2>{{number_of_groups}}</h2>
+    </div>
+  </section>
+
+{% endblock content %}
+
+
+{% comment %} <h1>Main Page </h1>
+<div>
+    <div>
+        {% for room in rooms %}
+        <div>
+            <a href= "{% url 'room' room.id %}"><h5>{{room.id}} --- {{room.name}}</h5></a>
+        </div>
+        {% endfor %}
+    </div>
+</div> {% endcomment %}

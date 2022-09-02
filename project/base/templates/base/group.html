@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}<title>{{title}}</title>{% endblock title %}
+{% block content %}
+
+<section class="group" id="home">
+    
+    <div class = "group-text"> 
+        <h1>Groups</h1>
+        {% if request.user.is_superuser %}
+        <a class= 'btn' href="{% url 'create_group_page' %}">Create</a>
+        {% endif %}
+    </div>
+    <div class="group-card">
+      
+      <table>
+        <tr>
+          <th>Group Name</th>
+          <th>Procedures</th>
+        </tr>
+        {% if request.user.is_superuser %}
+        {% for group in groups %}
+        <tr>
+          <td>{{group.name}}</td>
+          <td>
+            <a class="btn_update" href = "{% url 'view_group_page' group.id %}"><img src="https://img.icons8.com/external-line-icons-royyan-wijaya/64/000000/external-eyes-whatsername-medical-line-line-icons-royyan-wijaya.png"/></a>
+            <a class="btn_update" href = "{% url 'update_group_page' group.id %}" ><img src="https://img.icons8.com/color/48/000000/edit--v1.png"/></a>
+            <a class="btn_update" href = "{% url 'delete_group_page' group.id %}"><img src="https://img.icons8.com/fluency/48/000000/filled-trash.png"/></a>
+          </td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+
+        {% if not request.user.is_superuser %}
+        {% for group in group_is %}
+        <tr>
+          <td>{{group.name}}</td>
+          <td>
+            <a class="btn_update" href = "{% url 'view_group_page' group.id %}"><img src="https://img.icons8.com/external-line-icons-royyan-wijaya/64/000000/external-eyes-whatsername-medical-line-line-icons-royyan-wijaya.png"/></a>
+            <a class="btn_update" href = "{% url 'update_group_page' group.id %}" ><img src="https://img.icons8.com/color/48/000000/edit--v1.png"/></a>
+            <a class="btn_update" href = "{% url 'delete_group_page' group.id %}"><img src="https://img.icons8.com/fluency/48/000000/filled-trash.png"/></a>
+          </td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+
+      </table>
+    </div>
+    
+  </section>
+
+{% endblock content %}

@@ -1,0 +1,391 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  --main-color: #ff702a;
+  --text-color: #fff;
+  --bg-color: #1e1c2a;
+  --big-font: 5rem;
+  --h2-font: 2.25rem;
+  --p-font: 0.9rem;
+}
+
+*::selection {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+header {
+  background-color: var(--bg-color);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 170px;
+}
+
+.navbar-main{
+  display: flex;
+  justify-content: space-between;
+  width: 65%;
+  padding: 20px;
+}
+
+.navbar-main a {
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+
+.navbar-main a:hover {
+  color: var(--main-color);
+  transition: 0.4s;
+}
+
+.navbar-log{
+  display: flex;
+  justify-content: space-between;
+  width: 22%;
+  padding: 20px;
+}
+
+
+.navbar-log a {
+  color: var(--main-color);
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+
+.home {
+  width: 100%;
+  min-height: 50vh;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 0.5rem;
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 150px;
+}
+
+.home-card {
+  margin-top: 10px;
+  display: flex;
+  width: 350px;
+  height: 200px;
+  border-radius: 1.1rem;
+  background-color: var(--text-color);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.home-card h1 {
+  color: #ff702a;
+}
+
+.home-card h2 {
+  margin-top: 10px;
+  color: #bf2aff;
+  font-weight: 600;
+  font-size: var(--h2-font);
+}
+
+
+.group {
+  width: 100%;
+  min-height: 30vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+  flex-direction: column;
+}
+
+.group-text{
+  display: flex;
+  flex-direction: row;
+  gap: 300px;
+  margin-bottom: 20px;
+}
+
+.group-card {
+  margin-top: 10px;
+  display: flex;
+  width: auto;
+  height: auto;
+  border-radius: 1.1rem;
+  background-color: var(--text-color);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.btn {
+  display: inline-block;
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 0.5rem;
+}
+
+.btn:hover {
+  transform: scale(1.2) translateY(10px);
+  transition: 0.2s;
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  color: var(--main-color);
+  
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  
+}
+
+/* tr:hover {background-color: var(--bg-color);} */
+
+
+.btn_update {
+  display: inline-block;
+  background-color: wheat;
+  color: #fff;
+  padding: 5px 5px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  
+}
+
+img {
+  width: 20px;
+  height: 20px;
+}
+
+
+.btn_create{
+  display: inline-block;
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 10px 10px;
+  border-radius: 0.5rem;
+  width: 80px;
+  height: 40px;
+}
+
+.group-card-create {
+  margin-top: 10px;
+  display: flex;
+  width: 500px;
+  height: 100px;
+  border-radius: 1.1rem;
+  background-color: var(--text-color);
+  color: var(--main-color);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.group-card-create form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.group-card-create form input {
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  height: 25px;
+  font-weight: 600;
+  padding: 10px;
+}
+
+
+.group-delete-create {
+  margin-top: 10px;
+  display: flex;
+  width: 500px;
+  height: 100px;
+  border-radius: 1.1rem;
+  background-color: var(--text-color);
+  color: var(--main-color);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.group-delete-create form {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  color: var(--main-color);
+  text-decoration-line: underline;
+}
+
+
+.group-card-report {
+  margin-top: 20px;
+  display: flex;
+  width: 500px;
+  height: 350px;
+  border-radius: 1.1rem;
+  background-color: var(--text-color);
+  color: var(--main-color);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.group-card-report form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.group-card-report form input {
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  height: 40px;
+  font-weight: 600;
+  padding: 10px;
+
+}
+
+
+
+
+.group-card-usermanagment {
+  margin-top: 20px;
+  display: flex;
+  width: 500px;
+  height: 450px;
+  border-radius: 1.1rem;
+  background-color: var(--text-color);
+  color: var(--main-color);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.group-card-usermanagment form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.group-card-usermanagment form input {
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  height: 25px;
+  font-weight: 600;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.group-card-usermanagment form p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+
+.group-card-view {
+  margin-top: 20px;
+  display: flex;
+  width: 500px;
+  height: 450px;
+  border-radius: 1.1rem;
+  background-color: var(--text-color);
+  color: var(--main-color);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+
+.group-card-view {
+  
+  margin-top: 10px;
+  display: flex;
+  width: 500px;
+  height: 350px;
+  border-radius: 1.1rem;
+  background-color: var(--text-color);
+  color: var(--main-color);
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.group-card-view #group-card-view_items {
+  background-color: rgba(248, 248, 255, 0.957);
+  margin-top: 20px;
+  width: 400px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 20px;
+}
+
+
+.group-card-view #group-card-view_button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 20px;
+}
+
+
+

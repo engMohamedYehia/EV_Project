@@ -1,0 +1,21 @@
+<header>
+  <ul class="navbar">
+    <div class = 'navbar-main'>
+      <a href="{% url 'main_page' %}"><li>Home</li></a>
+      <a href="{% url 'group_page' %}"><li>Group Management</li></a>
+      <a href="{% url 'report_page' %}"><li>Reports</li></a>
+      <a href="{% url 'usermanagment_page' %}"><li>Users Management</li></a>
+      {% comment %} {% if request.user.is_superuser %}
+      <a href="{% url 'role_page' %}"><li>Roles Management</li></a>
+      {% endif %} {% endcomment %}
+    </div>
+    <div class="navbar-log">
+      {% if request.user.is_authenticated %}
+      <a href="#"><li>Welcome {{request.user}}</li></a>
+      <a href="{% url 'logout_user' %}"><li>logout</li></a>
+      {% else %}
+      <a href="#"><li>login</li></a>
+      {% endif %}
+    </div>
+  </ul>
+</header>

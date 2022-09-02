@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block content %}
+<section class="group" id="home">
+  <div class="group-text">
+    <h1>Info about User <span>{{user_is.username}}</span></h1>
+  </div>
+
+  <div class="group-card-view">
+    <div id="group-card-view_items">
+      <h3>
+        Username: <span style="color: rgb(49, 3, 60)">{{user_is.username}}</span>
+      </h3>
+      <h3>
+        Email:
+        <span style="color: rgb(49, 3, 60)">{{user_is.email}}</span>
+      </h3>
+      <h3>
+        Joined Date:
+        <span style="color: rgb(49, 3, 60)">{{user_is.date_joined.date}}</span>
+      </h3>
+      <h3>
+        Group Name:
+        <span style="color: rgb(49, 3, 60)">{{group_name}}</span>
+      </h3>
+      <h3>
+        Number of reports:
+        <span style="color: rgb(49, 3, 60)">{{report_number}}</span>
+      </h3>
+      <h3>
+        User Role:
+        {% if user_is.is_superuser  %}
+        <span style="color: rgb(49, 3, 60)">Admin</span>
+        {% else %}
+        <span style="color: rgb(49, 3, 60)">User</span>
+        {% endif %}
+      </h3>
+      
+    </div>
+    <div id="group-card-view_button">
+      <a class="btn" href="{% url 'usermanagment_page' %}">Back</a>
+      {% if request.user.is_superuser or request.user.id == user_is.id%}
+      <a class="btn" href="{% url 'update_usermanagment_page' user_is.id %}">Update</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endblock content %}

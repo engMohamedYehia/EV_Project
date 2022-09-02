@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+<section class="group" id="home">
+  <div class="group-text">
+    <h1>Info about group <span>{{group_is.name}}</span></h1>
+  </div>
+
+  <div class="group-card-view">
+    <div id="group-card-view_items">
+      <h3>
+        Group Name: <span style="color: rgb(49, 3, 60)">{{group_is.name}}</span>
+      </h3>
+      <h3>
+        Created Date:
+        <span style="color: rgb(49, 3, 60)">{{group_is.create}}</span>
+      </h3>
+      <h3>
+        Updated Date:
+        <span style="color: rgb(49, 3, 60)">{{group_is.update}}</span>
+      </h3>
+      <h3>
+        Number of users:
+        <span style="color: rgb(49, 3, 60)">{{user_number}}</span>
+      </h3>
+      <h3>
+        Number of Reports:
+        <span style="color: rgb(49, 3, 60)">{{user_report}}</span>
+      </h3>
+    </div>
+    <div id="group-card-view_button">
+      <a class="btn" href="{% url 'group_page' %}">Back</a>
+      <a class="btn" href="{% url 'update_group_page' group_is.id %}">Update</a>
+    </div>
+  </div>
+</section>
+{% endblock content %}

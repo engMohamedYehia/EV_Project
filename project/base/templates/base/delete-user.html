@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="group" id="home">
+    <div class = "group-text"> 
+        <h1>Are You sure you want to delete username <span>{{user_is.username}}</span></h1>
+    </div>
+    <div class="group-delete-create">
+        <form  method="POST" action="">
+        {% csrf_token %}
+        <a href = "{% url 'usermanagment_page' %}">Back</a>
+
+        <button class = 'btn_create' type="submit">Yes</button>
+        </form>
+        
+    </div>
+    
+  </section>
+{% endblock content %}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="group" id="home">
+    
+    <div class = "group-text"> 
+        <h1>User Managment</h1>
+        {% if request.user.is_superuser %}
+        <a class= 'btn' href="{% url 'create_usermanagment_page' %}">Create a User</a>
+        {% endif %}
+    </div>
+    <div class ="group-card">
+      
+      <table>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Group</th>
+          <th>Procedures</th>
+        </tr>
+        <tr>
+          {% for k,v in user_group.items %}
+          {% if request.user.id == k.id or request.user.is_superuser%}
+          <td>{{k.username}}</td>
+          <td>{{k.email}}</td>
+          {% if v == 'No Group' %}
+          <td>{{v}}</td>
+          {% else %}
+          <td>{{v|join:'-'}}</td>
+          {% endif %}
+          <td>
+            <a class="btn_update" href = "{% url 'view_user_page' k.id %}"><img src="https://img.icons8.com/external-line-icons-royyan-wijaya/64/000000/external-eyes-whatsername-medical-line-line-icons-royyan-wijaya.png"/></a>
+            <a class="btn_update" href = "{% url 'update_usermanagment_page' k.id %}"><img src="https://img.icons8.com/color/48/000000/edit--v1.png"/></a>
+            <a class="btn_update" href = "{% url 'delete_usermanagment_page' k.id %}"><img src="https://img.icons8.com/fluency/48/000000/filled-trash.png"/></a>
+          </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        
+      </table>
+    </div>
+  </section>
+
+
+
+{% endblock content %}
+
+
+
+   
+    
